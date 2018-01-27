@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/gocli/go-loader-git#readme",
   "dependencies": {
-    "download-github-repo": "^0.1.4"
+    "download-git-repo": "^1.0.2"
   }
 }
