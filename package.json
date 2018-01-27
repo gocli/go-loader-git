@@ -1,0 +1,22 @@
+{
+  "name": "go-loader-git",
+  "version": "0.0.0",
+  "description": "Go loader for git repositories",
+  "main": "loader.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gocli/go-loader-git.git"
+  },
+  "keywords": [
+    "template",
+    "generator",
+    "scaffold",
+    "cli"
+  ],
+  "author": "Stanislav Termosa <termosa.stanislav@gmail.com> (https://github.com/termosa)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gocli/go-loader-git/issues"
+  },
+  "homepage": "https://github.com/gocli/go-loader-git#readme"
+}
