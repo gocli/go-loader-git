@@ -1,6 +1,6 @@
 {
   "name": "go-loader-git",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Go loader for git repositories",
   "main": "loader.js",
   "repository": {
