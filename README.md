@@ -11,27 +11,13 @@ $ go :git [service] repo/name [dest]
 
 ### Services
 
-You can use on of 3 git hosts:
+You can use one of 3 git hosts:
 
 - GitHub: `$ go :git github repo/name`
 - Bitbucket: `$ go :git bitbucket repo/name`
 - GitLab: `$ go :git gitlab repo/name`
 
 If you avoid using service name in a command — **github** will be used by default.
-
-### Destination folder
-
-If destination path is specified, it will be created in case it is not exists yet, and loaded files will be stored in there. And if path is not specified, it is extracted out of the repository name.
-
-```bash
-# in /Users/gocli/
-
-# ensures that /Users/gocli/sources/new-project/ exists and loads files in there
-$ go :git username/repository-name sources/new-project
-
-# ensures that /Users/gocli/repository-name/ exists and loads files in there
-$ go :git username/repository-name
-```
 
 ### Syntax
 
@@ -47,8 +33,30 @@ And they can be mixed...
 
 ```bash
 $ go :git:github repo/name
+$ go :git gitlab:repo/name
 $ go :git:repo/name # github service will be used as a default value
 $ go :git:repo/name dest
+```
+
+Tag, branch or commit can be specified as a part of repository name (**master** is loaded by default):
+
+```bash
+$ go :git repo/name#v3 dest/path
+$ go :git bitbucket:repo/name#dev
+```
+
+### Destination folder
+
+If destination path is specified, it will be created in case it is not exists yet, and loaded files will be stored in there. And if path is not specified, it is extracted out of the repository name.
+
+```bash
+# in /Users/gocli/
+
+# ensures that /Users/gocli/sources/new-project/ exists and loads files in there
+$ go :git username/repository-name sources/new-project
+
+# ensures that /Users/gocli/repository-name/ exists and loads files in there
+$ go :git username/repository-name
 ```
 
 ## License
