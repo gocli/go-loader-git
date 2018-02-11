@@ -1,8 +1,14 @@
 {
   "name": "go-loader-git",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "Go loader for git repositories",
-  "main": "loader.js",
+  "main": "bundle.js",
+  "scripts": {
+    "start": "rollup -cw",
+    "test": "standard -v | snazzy",
+    "build": "rollup -c",
+    "prepublishOnly": "npm run test && npm run build"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gocli/go-loader-git.git"
@@ -11,18 +17,23 @@
     "template",
     "generator",
     "scaffold",
-    "cli"
+    "cli",
+    "go"
   ],
   "author": "Stanislav Termosa <termosa.stanislav@gmail.com> (https://github.com/termosa)",
-  "scripts": {
-    "test": "ava"
-  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/gocli/go-loader-git/issues"
   },
   "homepage": "https://github.com/gocli/go-loader-git#readme",
   "dependencies": {
-    "download-git-repo": "^1.0.2"
+    "rimraf": "2.6.2"
+  },
+  "devDependencies": {
+    "rollup": "^0.55.3",
+    "rollup-plugin-buble": "^0.18.0",
+    "rollup-plugin-standard": "^1.0.0",
+    "snazzy": "^7.0.0",
+    "standard": "^10.0.3"
   }
 }
