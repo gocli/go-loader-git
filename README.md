@@ -11,9 +11,9 @@ $ go git <repository> [destination] [--keep-git]
 
 `repository` — is anything that can be processed by [git clone](https://git-scm.com/docs/git-clone).
 
-`--keep-git` (`-k`) — do not remove **.git** directory after loading repository.
-
 `destination` — if it is specified, it will be created in case it is not exists yet, and loaded files will be stored in there. If path is not specified, it is extracted from the repository name.
+
+`--keep-git` (`-k`) — do not remove **.git** directory after loading repository.
 
 ## Examples
 
