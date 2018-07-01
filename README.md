@@ -1,4 +1,4 @@
-# go-loader-git [![npm](https://img.shields.io/npm/v/go-loader-git.svg?style=flat-square)](https://www.npmjs.com/package/go-loader-git) [![Travis](https://img.shields.io/travis/gocli/go-loader-git.svg?style=flat-square)](https://travis-ci.org/gocli/go-loader-git)
+# go-loader-git [![npm](https://img.shields.io/npm/v/go-loader-git.svg?style=flat-square)](https://www.npmjs.com/package/go-loader-git) [![Travis](https://img.shields.io/travis/gocli/go-loader-git.svg?style=flat-square)](https://travis-ci.org/gocli/go-loader-git) [![Coveralls](https://img.shields.io/coveralls/github/gocli/go-loader-git.svg?style=flat-square)](https://coveralls.io/github/gocli/go-loader-git)
 
 [Go](https://www.npmjs.com/package/go) loader for git repositories
 
