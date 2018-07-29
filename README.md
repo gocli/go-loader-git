@@ -1,4 +1,10 @@
-# go-loader-git [![npm](https://img.shields.io/npm/v/go-loader-git.svg?style=flat-square)](https://www.npmjs.com/package/go-loader-git) [![Travis](https://img.shields.io/travis/gocli/go-loader-git.svg?style=flat-square)](https://travis-ci.org/gocli/go-loader-git) [![Coveralls](https://img.shields.io/coveralls/github/gocli/go-loader-git.svg?style=flat-square)](https://coveralls.io/github/gocli/go-loader-git) [![Known Vulnerabilities](https://snyk.io/test/github/gocli/go-loader-git/badge.svg?style=flat-square)](https://snyk.io/test/github/gocli/go-loader-git) [![js-standard-style](https://img.shields.io/badge/code%20style-standard-green.svg?style=flat-square)](https://github.com/gocli/go-loader-git)
+# go-loader-git
+
+[![npm](https://img.shields.io/npm/v/go-loader-git.svg?style=flat-square)](https://www.npmjs.com/package/go-loader-git)
+[![Travis](https://img.shields.io/travis/gocli/go-loader-git.svg?style=flat-square)](https://travis-ci.org/gocli/go-loader-git)
+[![Coveralls](https://img.shields.io/coveralls/github/gocli/go-loader-git.svg?style=flat-square)](https://coveralls.io/github/gocli/go-loader-git)
+[![Vulnerabilities](https://snyk.io/test/github/gocli/go-loader-git/badge.svg?style=flat-square)](https://snyk.io/test/github/gocli/go-loader-git)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-green.svg?style=flat-square)](https://github.com/gocli/go-loader-git)
 
 [Go](https://www.npmjs.com/package/go) loader for git repositories
 
@@ -6,24 +12,27 @@
 
 ```bash
 $ npm install --global go go-loader-git
-$ go git <repository> [destination] [--keep-git]
+$ go git git@github.com:gocli/basic-boilerplate.git
 ```
 
-`repository` — is anything that can be processed by [git clone](https://git-scm.com/docs/git-clone).
+## Options
 
-`destination` — if it is specified, it will be created in case it is not exists yet, and loaded files will be stored in there. If path is not specified, it is extracted from the repository name.
+```bash
+$ go git <repository> [options] [destination]
+```
 
-`--keep-git` (`-k`) — do not remove **.git** directory after loading repository.
+- `repository` — valid git link to a repository
+- `options`:
+  - `--keep-git` (`-k`) — do not remove `.git/` directory after loading repository
+- `destination` — folder path to put loaded files (destination folder will be created if it doesn't exist)
 
 ## Examples
 
 ```bash
-# in /Users/gocli/
+# install boilerplate from Bitbucket to ./sources/new-project
+$ go git git@bitbucket.org:repository/path.git sources/new-project
 
-# ensures that /Users/gocli/sources/new-project/ exists and loads files in there
-$ go git git@github.com:repository/path.git sources/new-project
-
-# ensures that /Users/gocli/path/ exists and loads files in there
+# install boilerplate from GitHub to ./path
 $ go git https://github.com/repository/path.git
 ```
 
