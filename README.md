@@ -12,7 +12,7 @@
 
 ```bash
 $ npm install --global go go-loader-git
-$ go git git@github.com:gocli/basic-boilerplate.git
+$ go git git@github.com:gocli/boilerplate-example.git
 ```
 
 ## Options
