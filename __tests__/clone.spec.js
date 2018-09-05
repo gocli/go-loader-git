@@ -46,6 +46,33 @@ describe('Clone', () => {
       })
   })
 
+  it('clones all history if depth flag is falsy', () => {
+    const ee = new EventEmitter()
+    mockSpawn.mockReturnValue(ee)
+    setTimeout(() => ee.emit('close', 0))
+    return clone(repo, target, { 'depth': false })
+      .then(() => {
+        expect(mockSpawn).toHaveBeenCalledTimes(1)
+        expect(mockSpawn).toHaveBeenCalledWith(gitBin, ['clone', '--', repo, target])
+      })
+  })
+
+  it('clones all history if checkout flag is setted', () => {
+    const ee = new EventEmitter()
+    const ee2 = new EventEmitter()
+    mockSpawn.mockReturnValueOnce(ee)
+    setTimeout(() => {
+      mockSpawn.mockReturnValueOnce(ee2)
+      ee.emit('close', 0)
+      setTimeout(() => ee2.emit('close', 0))
+    })
+    return clone(repo, target, { 'checkout': 'tag' })
+      .then(() => {
+        expect(mockSpawn).toHaveBeenCalledTimes(2)
+        expect(mockSpawn).toHaveBeenCalledWith(gitBin, ['clone', '--', repo, target])
+      })
+  })
+
   it('handles depth option', () => {
     const ee = new EventEmitter()
     mockSpawn.mockReturnValue(ee)
