@@ -15,10 +15,18 @@ $ npm install --global go go-loader-git
 $ go git git@github.com:gocli/boilerplate-example.git
 ```
 
+### Shortcut
+
+[Go CLI](https://www.npmjs.com/package/go-cli) has shortcut for this loader, so you don't need to write `git`:
+
+```bash
+$ go git@github.com:gocli/boilerplate-example.git
+```
+
 ## Options
 
 ```bash
-$ go git <repository> [options] [destination]
+$ go git <repository> [destination] [options]
 ```
 
 - `repository` — valid git link to a repository
@@ -26,7 +34,7 @@ $ go git <repository> [options] [destination]
 - `options`:
   - `--no-install` — do not install boilerplate after loading
   - `--keep-git` (`-k`) — do not remove `.git/` directory after loading repository
-  - `--checkout <string>` — branch, tag, commit or other link to checkout after repository is loaded
+  - `--checkout <string>` — git reference (tag, branch, etc) to checkout after repository is loaded
   - `--depth <number>` — truncate history by number of commits
   - `--git <string>` — path to Git binary
 
